@@ -1,22 +1,17 @@
-@extends('plantilla')
-@section('contenido')
-<div class="card card-primary">
-    <div class="card-header">
-        <h3 class="card-title">Registro de productos</h3>
-    </div>
-    <!-- /.card-header -->
-    <!-- form start -->
-    <form action="{{route('productos.guardar')}}" method="POST" enctype="multipart/form-data">
 
-        @csrf
-        <div class="card-body">
+
+
+<form action="action= {{route('productos.update', $prodc->id) }}" method="POST" enctype="multipart/form-data">
+@method('PUT')    
+@csrf
+<div class="card-body">
             <div class="form-group">
                 <label for="nombre">Nombre del producto</label>
-                <input type="text" class="form-control" id="nombre" placeholder="Digite nombre">
+                <input type="text" class="form-control" id="nombre" placeholder="Digite nombre" value="{{$prodc->nombre}}">
             </div>
             <div class="form-group">
                 <label for="descripcion">Descripción</label>
-                <input type="text" class="form-control" id="descripcion" placeholder="...">
+                <input type="text" class="form-control" id="descripcion" placeholder="..." value="{{$prodc->descripcion}}">
             </div>
             
                 <div class="col-sm-12">
@@ -25,18 +20,17 @@
                         <div class="input-group-prepend">
                             <span class="input-group-text">Q</span>
                         </div>
-                        <input type="number" id="precio" name="precio" class="form-control required">
+                        <input type="number" id="precio" name="precio" class="form-control required" value="{{$prodc->precio}}">
                     </div>
                 </div>
             </div>
             <div class="form-group">
                 <label for="cantidad">Cantidad</label>
-                <input type="number" class="form-control" id="cantidad" placeholder="Digite cantidad">
+                <input type="number" class="form-control" id="cantidad" placeholder="Digite cantidad" value="{{$prodc->cantidad}}">
             </div>
         </div>
         <div class="card-footer">
             <button type="submit" class="btn btn-primary">Submit</button>
         </div>
-    </form>
-</div>
-@endsection
+
+</form>

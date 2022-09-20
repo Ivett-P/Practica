@@ -26,6 +26,25 @@ class ProductosController extends Controller
     {
         return view('productos/registro');
     }
+    public function guardar(Request $request)
+    {
+        $producto = new Productos();
+        $producto->nombre = $request->nombre;
+        $producto->descripcion = $request->descripcion;
+        $producto->precio = $request->precio;
+        $producto->cantidad = $request->cantidad;
+        $producto->save();
+        return redirect('productos/registro');
+    }
+    public function list()
+    {
+        return view('productos/list', compact('produc'));
+    }
+    public function editar($id)
+    {
+        $prodc = Productos::findOrFail($id);
+        return view('productos/editar', compact('prodc'));
+    }
 
     /**
      * Store a newly created resource in storage.
