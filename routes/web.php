@@ -15,3 +15,13 @@ Route::post('/productos/guardar',[ProductosController::class, 'guardar'])->name(
 Route::get('/productos/list',[ProductosController::class, 'list'])->name('productos.list');
 Route::get('/productos/editar/{iden}', [ProductosController::class, 'editar'])->name('productos.editar');
 Route::put('/productos/update/{iden}',[ProductosController::class, 'update'])->name('productos.liupdatest');
+
+Route::middleware([
+    'auth:sanctum',
+    config('jetstream.auth_session'),
+    'verified'
+])->group(function () {
+    Route::get('/dashboard', function () {
+        return view('dashboard');
+    })->name('dashboard');
+});

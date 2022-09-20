@@ -31,6 +31,11 @@
                                 class="btn btn-warning" title="Editar"><i>
                                 class="fas fa-user-edit"></i></a>
                         </td>
+                        <td>
+                            <a href="{{ route('productos.eliminar', $product->id) }}"
+                                class="btn btn-danger" title="Eliminar"><i>
+                                class="fas fa-trash"></i></a>
+                        </td>
                     </tr>
 
                   </tbody>

@@ -52,7 +52,7 @@
         <!-- Main Sidebar Container -->
         <aside class="main-sidebar sidebar-dark-primary elevation-4">
             <!-- Brand Logo -->
-            <a href="" class="brand-link" style="margin-bottom:3px margin-top:2px">
+            <a href="" class="brand-link" style="margin-bottom:3px margin-top:x2px">
                  <img src="" alt="AdminLTE Logo" width="30" height="30" class="brand-image img-rectangle "
                     style="opacity: .8 "> <label style="opacity:.9"></label>
             </a>

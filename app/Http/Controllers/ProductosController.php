@@ -88,7 +88,19 @@ class ProductosController extends Controller
      */
     public function update(Request $request, productos $productos)
     {
-        //
+        $modproducto = new Productos();
+        $modproducto->nombre = $request->nombre;
+        $modproducto->descripcion = $request->descripcion;
+        $modproducto->precio = $request->precio;
+        $modproducto->cantidad = $request->cantidad;
+        $modproducto->save();
+        return redirect()->route('productos/list');
+    }
+
+    public function eliminar($id){
+        $pp = Productos::find($id);
+        $pp->delete();
+        return redirect()->route('productos.list');
     }
 
     /**
